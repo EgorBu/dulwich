@@ -511,7 +511,7 @@ class DiskRefsContainerTests(RefsContainerTests, TestCase):
         encoded_ref = b'refs/heads/' + name
         with open(os.path.join(
             self._repo.path.encode(
-                sys.getfilesystemencoding()), encoded_ref), 'w') as f:
+                'utf-8'), encoded_ref), 'w') as f:
             f.write('00' * 20)
 
         expected_refs = set(_TEST_REFS.keys())
